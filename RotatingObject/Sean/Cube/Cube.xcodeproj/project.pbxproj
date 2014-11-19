@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1480676B1A1C17EC005CD8FC /* glfw3.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 1480676A1A1C17EC005CD8FC /* glfw3.h */; };
 		14D218391A1BFCAB00D8F72C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D218381A1BFCAB00D8F72C /* main.cpp */; };
 		14D218401A1BFCBE00D8F72C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D2183F1A1BFCBE00D8F72C /* GLUT.framework */; };
 		14D218421A1BFCC500D8F72C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D218411A1BFCC500D8F72C /* GLKit.framework */; };
 		14D218441A1BFCD100D8F72C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D218431A1BFCD100D8F72C /* OpenGL.framework */; };
-		14D218481A1C07A000D8F72C /* glfw3.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D218461A1C07A000D8F72C /* glfw3.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		144C319B1A1C13F100962944 /* RubiksCube.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = RubiksCube.bmp; sourceTree = "<group>"; };
+		1480676A1A1C17EC005CD8FC /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glfw3.h; path = "../../../../../Downloads/glfw-3.0.4/include/GLFW/glfw3.h"; sourceTree = "<group>"; };
 		14D218351A1BFCAB00D8F72C /* Cube */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cube; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D218381A1BFCAB00D8F72C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		14D2183F1A1BFCBE00D8F72C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -40,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D218481A1C07A000D8F72C /* glfw3.h in Frameworks */,
+				1480676B1A1C17EC005CD8FC /* glfw3.h in Frameworks */,
 				14D218441A1BFCD100D8F72C /* OpenGL.framework in Frameworks */,
 				14D218421A1BFCC500D8F72C /* GLKit.framework in Frameworks */,
 				14D218401A1BFCBE00D8F72C /* GLUT.framework in Frameworks */,
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				14D218381A1BFCAB00D8F72C /* main.cpp */,
+				144C319B1A1C13F100962944 /* RubiksCube.bmp */,
 			);
 			path = Cube;
 			sourceTree = "<group>";
@@ -78,6 +81,7 @@
 		14D218451A1BFCD900D8F72C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1480676A1A1C17EC005CD8FC /* glfw3.h */,
 				14D218461A1C07A000D8F72C /* glfw3.h */,
 				14D218431A1BFCD100D8F72C /* OpenGL.framework */,
 				14D218411A1BFCC500D8F72C /* GLKit.framework */,
@@ -260,6 +264,7 @@
 				14D2183E1A1BFCAB00D8F72C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

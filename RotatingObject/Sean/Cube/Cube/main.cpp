@@ -2,9 +2,9 @@
 #include "glfw3.h"
 #define GL_GLEXT_PROTOTYPES
 #ifdef __APPLE__    //If it is an Apple device
-    #include <GLUT/glut.h>
+#include <GLUT/glut.h>
 #else
-    #include <GL/glut.h>
+#include <GL/glut.h>
 #endif
 
 // ----------------------------------------------------------
@@ -29,54 +29,54 @@ void display(){
     glRotatef( rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
     
-    //Dark - FRONT
+    //Red - FRONT
     glBegin(GL_POLYGON);
-    glColor3f(   0.3,  0.3,  0.3 );
+    glColor3f(   .72,  .07,  .20 );
     glVertex3f(  0.5, -0.5, -0.5 );
     glVertex3f(  0.5,  0.5, -0.5 );
     glVertex3f( -0.5,  0.5, -0.5 );
     glVertex3f( -0.5, -0.5, -0.5 );
     glEnd();
     
-    // White side - BACK
+    // Orange side - BACK
     glBegin(GL_POLYGON);
-    glColor3f(   1.0,  1.0, 1.0 );
+    glColor3f(   1.0,  .35, 0.0 );
     glVertex3f(  0.5, -0.5, 0.5 );
     glVertex3f(  0.5,  0.5, 0.5 );
     glVertex3f( -0.5,  0.5, 0.5 );
     glVertex3f( -0.5, -0.5, 0.5 );
     glEnd();
     
-    // Purple side - RIGHT
+    // White side - RIGHT
     glBegin(GL_POLYGON);
-    glColor3f(  1.0,  0.0,  1.0 );
+    glColor3f(  1.0,  1.0,  1.0 );
     glVertex3f( 0.5, -0.5, -0.5 );
     glVertex3f( 0.5,  0.5, -0.5 );
     glVertex3f( 0.5,  0.5,  0.5 );
     glVertex3f( 0.5, -0.5,  0.5 );
     glEnd();
     
-    // Green side - LEFT
+    // Yellow side - LEFT
     glBegin(GL_POLYGON);
-    glColor3f(   0.0,  1.0,  0.0 );
+    glColor3f(   1.0,  .84,  0.0 );
     glVertex3f( -0.5, -0.5,  0.5 );
     glVertex3f( -0.5,  0.5,  0.5 );
     glVertex3f( -0.5,  0.5, -0.5 );
     glVertex3f( -0.5, -0.5, -0.5 );
     glEnd();
     
-    // Blue side - TOP
+    // Green side - TOP
     glBegin(GL_POLYGON);
-    glColor3f(   0.0,  0.0,  1.0 );
+    glColor3f(   0.0,  .61,  .28 );
     glVertex3f(  0.5,  0.5,  0.5 );
     glVertex3f(  0.5,  0.5, -0.5 );
     glVertex3f( -0.5,  0.5, -0.5 );
     glVertex3f( -0.5,  0.5,  0.5 );
     glEnd();
     
-    // Red side - BOTTOM
+    // Blue side - BOTTOM
     glBegin(GL_POLYGON);
-    glColor3f(   1.0,  0.0,  0.0 );
+    glColor3f(   0.0,  .27,  .67 );
     glVertex3f(  0.5, -0.5, -0.5 );
     glVertex3f(  0.5, -0.5,  0.5 );
     glVertex3f( -0.5, -0.5,  0.5 );
