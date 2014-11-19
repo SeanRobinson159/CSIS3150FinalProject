@@ -34,7 +34,6 @@
 		14D2183F1A1BFCBE00D8F72C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		14D218411A1BFCC500D8F72C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		14D218431A1BFCD100D8F72C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		14D218461A1C07A000D8F72C /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = glfw3.h; path = "../../../../../Downloads/OpenGL-tutorial_v0014_21/external/glfw-3.0.3/include/GLFW/glfw3.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				1480676A1A1C17EC005CD8FC /* glfw3.h */,
-				14D218461A1C07A000D8F72C /* glfw3.h */,
 				14D218431A1BFCD100D8F72C /* OpenGL.framework */,
 				14D218411A1BFCC500D8F72C /* GLKit.framework */,
 				14D2183F1A1BFCBE00D8F72C /* GLUT.framework */,
