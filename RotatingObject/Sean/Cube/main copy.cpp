@@ -12,16 +12,10 @@
 // ----------------------------------------------------------
 void display();
 void specialKeys();
-void cube();
-void jacob();
-void mindy();
 
 double rotate_y=0;
 double rotate_x=0;
-bool autoRotate;
-bool openCube;
-bool openJacob;
-bool openMindy;
+bool autoRotate=false;
 
 void display(){
     
@@ -35,30 +29,6 @@ void display(){
     glRotatef( rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
     
-    //Which object to open
-    std::cout << "1 for Sean\n2 for Jacob\n3 for Mindy" << std::endl;
-    if (openCube) {
-        cube();
-    } else if (openJacob){
-        jacob();
-    }else if (openMindy){
-        mindy();
-    }
-    
-    glFlush();
-    glutSwapBuffers();
-    
-}
-
-void mindy(){
-    
-}
-
-void jacob(){
-    
-}
-
-void cube() {
     //Red - FRONT
     glBegin(GL_POLYGON);
     glColor3f(   .72,  .07,  .20 );
@@ -118,9 +88,10 @@ void cube() {
         rotate_y +=1;
         glutPostRedisplay();
     }
+    glFlush();
+    glutSwapBuffers();
+    
 }
-
-
 
 // ----------------------------------------------------------
 // specialKeys() Callback Function
@@ -136,49 +107,16 @@ void specialKeys( int key, int x, int y ) {
         rotate_x -= 5;
     else if (key == 27)     //Esc key
         exit(0);
-    
-    else if (key == 49){    //Number 1
-        if (!openCube){
-            openCube = true;
-            openMindy = false;
-            openJacob = false;
-        }
-        else {
-            openCube = false;
-            autoRotate = false;
-            rotate_x = 0;
-            rotate_y = 0;
-        }
-    }
-    else if (key == 50){    //Number 2
-        if (!openJacob) {
-            openJacob = true;
-            openCube = false;
-            openMindy = false;
-        }
-        else {
-            openJacob = false;
-        }
-    }
-    else if (key == 51){    //Number 2
-        if(!openMindy) {
-            openMindy = true;
-            openJacob = false;
-            openCube = false;
-        }
-        else {
-            openMindy = false;
-        }
-    }
     else if (key == 32){    //SpaceBar
-        if (autoRotate) autoRotate = false;
-        else autoRotate = true;
+        if (autoRotate) {
+            autoRotate = false;
+        } else {
+            autoRotate = true;
+        }
     }
     //  Request display update
     glutPostRedisplay();
 }
-
-
 
 // ----------------------------------------------------------
 // main() function
