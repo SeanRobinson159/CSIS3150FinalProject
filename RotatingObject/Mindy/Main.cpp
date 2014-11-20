@@ -28,6 +28,19 @@ glPopMatrix();
     }
 }
 
+void Inverseteapot() {
+glColor3f(1,0.0,0.0);
+glPushMatrix();
+glutWireTeapot(-.5);
+glPopMatrix();
+
+    if (autoRotate) {
+        rotate_x +=1;
+        rotate_y +=1;
+        glutPostRedisplay();
+    }
+}
+
 void torus(bool change){
 
     glColor3f(1,1.0,0.0);
