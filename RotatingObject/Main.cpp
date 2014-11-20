@@ -1,5 +1,5 @@
 #include "Sean/Cube/main.cpp"
-//#include "Mindy/main.cpp"
+#include "Mindy/main.cpp"
 #include "Jacob/Jacob/main.cpp"
 
 void specialKeys();
@@ -90,6 +90,7 @@ void specialKeys( int key, int x, int y ) {
 }
 
 int main(int argc, char* argv[]){
+    glutInitWindowSize(800,800);
     //  Initialize GLUT and process user parameters
     glutInit(&argc,argv);
     //  Request double buffered true color window with Z-buffer
