@@ -130,13 +130,14 @@ void specialKeys( int key, int x, int y ) {
 }
 
 int main(int argc, char* argv[]){
+    // Setting the window size
     glutInitWindowSize(800,800);
     //  Initialize GLUT and process user parameters
     glutInit(&argc,argv);
     //  Request double buffered true color window with Z-buffer
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     // Create window
-    glutCreateWindow("***Awesome Objects!***");
+    glutCreateWindow("");
     //  Enable Z-buffer depth test
     glEnable(GL_DEPTH_TEST);
     // Callback functions
@@ -144,5 +145,4 @@ int main(int argc, char* argv[]){
     glutSpecialFunc(specialKeys);
     //  Pass control to GLUT for events
     glutMainLoop();
-    return 0;
 }
