@@ -1,6 +1,6 @@
 #include "Sean/Cube/main.cpp"
 //#include "Mindy/main.cpp"
-//#include "Jacob/main.cpp"
+#include "Jacob/Jacob/main.cpp"
 
 void specialKeys();
 void display();
@@ -25,7 +25,7 @@ void display(){
     if (openCube) {
         cube();
     } else if (openJacob){
-//        jacob();
+        jacob();
     }else if (openMindy){
 //        mindy();
     }

@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <GL/glu.h>
+//#include <GL/glu.h>
 
 #ifdef __APPLE__	//If it is running on an Apple device
 	#include <GLUT/glut.h>

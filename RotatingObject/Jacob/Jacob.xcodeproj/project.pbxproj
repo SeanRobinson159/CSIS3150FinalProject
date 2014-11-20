@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B17622281A1BFCCA00813E90 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B17622271A1BFCCA00813E90 /* main.cpp */; };
+		B17622281A1BFCCA00813E90 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B17622271A1BFCCA00813E90 /* main.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated"; }; };
 		B176222F1A1BFCE100813E90 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B176222E1A1BFCE100813E90 /* Cocoa.framework */; };
 		B17622311A1BFCF200813E90 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17622301A1BFCF200813E90 /* OpenGL.framework */; };
 		B17622331A1BFCF800813E90 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17622321A1BFCF800813E90 /* GLUT.framework */; };
@@ -252,6 +252,7 @@
 				B176222D1A1BFCCA00813E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
