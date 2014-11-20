@@ -31,7 +31,7 @@ glPopMatrix();
 void torus(){
     glColor3f(1,0.0,0.0);
     glPushMatrix();
-    glutWireTorus(.5, .5, 10, 50);
+    glutSolidTorus(.5, 1.0, 10, 40);
     glPopMatrix();
 
     if (autoRotate) {
