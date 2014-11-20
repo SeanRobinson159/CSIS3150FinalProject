@@ -11,12 +11,6 @@
 #include <math.h>
 #define GL_GLEXT_PROTOTYPES
 
-//#ifdef __APPLE__	//If it is running on an Apple device
-//#include <GLUT/glut.h>
-//#else				//If it is running on anything else
-//#include <GL/glut.h>
-//#endif
-
 void jacob(){
     
     //  Clear screen and Z-buffer
@@ -63,8 +57,8 @@ void jacob(){
     glEnd();
     
     if (autoRotate) {
-        rotate_x +=1;
-        rotate_y +=1;
+        rotate_x +=.5;
+        rotate_y +=.5;
         glutPostRedisplay();
     }
 }
@@ -149,8 +143,8 @@ void jacob2(){
     glEnd();
 
     if (autoRotate) {
-        rotate_x +=1;
-        rotate_y +=1;
+        rotate_x +=.5;
+        rotate_y +=.5;
         glutPostRedisplay();
     }
     

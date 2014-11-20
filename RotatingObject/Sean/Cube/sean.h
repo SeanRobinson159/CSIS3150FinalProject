@@ -68,8 +68,8 @@ void cube() {
     glEnd();
     
     if (autoRotate) {
-        rotate_x +=1;
-        rotate_y +=1;
+        rotate_x +=.5;
+        rotate_y +=.5;
         glutPostRedisplay();
     }
 }

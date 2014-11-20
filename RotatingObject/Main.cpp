@@ -4,9 +4,9 @@
     #include <GL/glut.h>
 #endif
 
-#include "Sean/Cube/sean.cpp"
-#include "Mindy/mindy.cpp"
-#include "Jacob/Jacob/jacob.cpp"
+#include "Sean/Cube/sean.h"
+#include "Mindy/mindy.h"
+#include "Jacob/Jacob/jacob.h"
 
 //Setting up methods
 void specialKeys();
@@ -20,6 +20,8 @@ bool openCube;
 bool openJacob;
 bool openJacob2;
 bool openMindy;
+bool openMindy2;
+bool isSolid;
 
 void displayMenu(float x, float y, float r, float g, float b, void *font, const char *string){
     glColor3f( r, g, b );
@@ -51,7 +53,7 @@ void openObject(){
     if (showMenu) {
         displayMenu(-0.2, 0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
         displayMenu(-0.2, 0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
-        displayMenu(-0.2, 0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Teapot");
+        displayMenu(-0.2, 0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Torus");
         displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
         displayMenu(-0.2, 0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "R: Reset Rotate");
         displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "M: Menu");
@@ -64,7 +66,7 @@ void openObject(){
     } else if (openJacob){
         jacob();
     }else if (openMindy){
-        teapot();
+        teapot(isSolid);
     }else if (openJacob2){
         jacob2();
     }
@@ -76,31 +78,29 @@ void keyBinding(int key){
             openCube = !openCube;
             showMenu = openJacob = openJacob2 = openMindy = false;
             break;
-            
         case 50:    //Number 2
             openJacob = !openJacob;
             showMenu = openCube = openJacob2 = openMindy = false;
             break;
-            
         case 51:    //Number 3
             openMindy = !openMindy;
             showMenu = openJacob = openJacob2 = openCube = false;
             break;
-            
         case 52:    //Number 4
             openJacob2 = !openJacob2;
             showMenu = openJacob = openCube = openMindy = false;
             break;
-            
-        case 114:    //r
+        case 114:    //letter r
             rotate_x = 0;
             rotate_y = 0;
             break;
-            
-        case 109:    //m
+        case 109:    //letter m
             rotate_x = 0;
             rotate_y = 0;
             showMenu = !showMenu;
+            break;
+        case 119:    //letter w
+            isSolid = !isSolid;
             break;
             
         default:
