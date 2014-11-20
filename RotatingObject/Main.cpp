@@ -1,12 +1,4 @@
-#ifdef __APPLE__	//If it is running on an Apple device
-    #include <GLUT/glut.h>
-#else				//If it is running on anything else
-    #include <GL/glut.h>
-#endif
-
-#include "Sean/Cube/sean.h"
-#include "Mindy/mindy.h"
-#include "Jacob/Jacob/jacob.h"
+#include "rotatingObjects.h"
 
 //Setting up methods
 void specialKeys();
@@ -17,10 +9,10 @@ void displayMenu(float x, float y, float r, float g, float b, void *font, const 
 //Setting up variables
 bool showMenu = true;
 bool openCube;
-bool openJacob;
-bool openJacob2;
-bool openMindy;
-bool openMindy2;
+bool openTetrahedron;
+bool openHypertetrahedron;
+bool openTeapot;
+bool openTorus;
 bool isSolid;
 
 void displayMenu(float x, float y, float r, float g, float b, void *font, const char *string){
@@ -65,14 +57,14 @@ void openObject(){
     } else
         if (openCube) {
         cube();
-    } else if (openJacob){
-        jacob();
-    }else if (openMindy){
+    } else if (openTetrahedron){
+        tetrahedron();
+    }else if (openTeapot){
         teapot(isSolid);
-    }else if (openMindy2){
+    }else if (openTorus){
         torus(isSolid);
-    }else if (openJacob2){
-        jacob2();
+    }else if (openHypertetrahedron){
+        hypertetrahedron();
     }
 }
 
@@ -80,23 +72,23 @@ void keyBinding(int key){
     switch (key) {  //Which object to open
         case 49:    //Number 1
             openCube = !openCube;
-            showMenu = openMindy2 = openJacob = openJacob2 = openMindy = false;
+            showMenu = openTorus = openTetrahedron = openHypertetrahedron = openTeapot = false;
             break;
         case 50:    //Number 2
-            openJacob = !openJacob;
-            showMenu = openMindy2 = openCube = openJacob2 = openMindy = false;
+            openTetrahedron = !openTetrahedron;
+            showMenu = openTorus = openCube = openHypertetrahedron = openTeapot = false;
             break;
         case 51:    //Number 3
-            openMindy = !openMindy;
-            showMenu = openMindy2 = openJacob = openJacob2 = openCube = false;
+            openTeapot = !openTeapot;
+            showMenu = openTorus = openTetrahedron = openHypertetrahedron = openCube = false;
             break;
         case 52:    //Number 4
-            openJacob2 = !openJacob2;
-            showMenu = openMindy2 = openJacob = openCube = openMindy = false;
+            openHypertetrahedron = !openHypertetrahedron;
+            showMenu = openTorus = openTetrahedron = openCube = openTeapot = false;
             break;
         case 53:    //Number 5
-            openMindy2 = !openMindy2;
-            showMenu = openJacob = openJacob2 = openCube = openMindy = false;
+            openTorus = !openTorus;
+            showMenu = openTetrahedron = openHypertetrahedron = openCube = openTeapot = false;
             break;
         case 114:    //letter r
             rotate_x = 0;

@@ -1,28 +1,4 @@
-//
-//  main.cpp
-//  Jacob
-//
-//  Created by Jacob Ward on 11/18/14.
-//  Copyright (c) 2014 Jacob Ward. All rights reserved.
-//
-
-#include <iostream>
-#include <stdarg.h>
-#include <math.h>
-#define GL_GLEXT_PROTOTYPES
-
-void jacob(){
-    
-    //  Clear screen and Z-buffer
-    glClearColor(0, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    
-    // Reset transformations
-    glLoadIdentity();
-    
-    // Rotate when user changes rotate_x and rotate_y
-    glRotatef( rotate_x, 1.0, 0.0, 0.0 );
-    glRotatef( rotate_y, 0.0, 1.0, 0.0 );
+void tetrahedron(){
     
     glBegin(GL_POLYGON);
     glNormal3b(1, 1, 1);
@@ -63,18 +39,7 @@ void jacob(){
     }
 }
 
-void jacob2(){
-    
-    //  Clear screen and Z-buffer
-    glClearColor(0, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
-    // Reset transformations
-    glLoadIdentity();
-
-    // Rotate when user changes rotate_x and rotate_y
-    glRotatef( rotate_x, 1.0, 0.0, 0.0 );
-    glRotatef( rotate_y, 0.0, 1.0, 0.0 );
+void hypertetrahedron(){
     
     glBegin(GL_POLYGON);
     glNormal3b(1, 1, 1);

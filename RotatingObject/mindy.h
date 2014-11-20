@@ -1,6 +1,3 @@
-#include <iostream>
-#include <stdlib.h>
-
 void teapot(bool isSolid) {
     if(!isSolid){
         glColor3f(1,0.0,0.0);

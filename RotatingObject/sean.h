@@ -1,16 +1,3 @@
-#include <iostream>
-#define GL_GLEXT_PROTOTYPES
-//#ifdef __APPLE__    //If it is an Apple device
-//    #include <GLUT/glut.h>
-//#else
-//    #include <GL/glut.h>
-//#endif
-
-void cube();
-
-double rotate_y=0;
-double rotate_x=0;
-bool autoRotate;
 
 void cube() {
     //Red - FRONT
