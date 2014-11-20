@@ -20,9 +20,9 @@
 void display();
 void specialKeys();
 
-double rotate_y=0;
-double rotate_x=0;
-bool autoRotate=false;
+//double rotate_y=0;
+//double rotate_x=0;
+//bool autoRotate=false;
 
 void jacob(){
     
@@ -76,53 +76,4 @@ void jacob(){
         rotate_y +=1;
         glutPostRedisplay();
     }
-    glFlush();
-    glutSwapBuffers();
-    
 }
-
-/*
-// ----------------------------------------------------------
-// specialKeys() Callback Function
-// ----------------------------------------------------------
-void specialKeys( int key, int x, int y ) {
-    if (key == GLUT_KEY_RIGHT)  //  Right arrow - increase rotation by 5 degree
-        rotate_y += 5;
-    else if (key == GLUT_KEY_LEFT) //  Left arrow - decrease rotation by 5 degree
-        rotate_y -= 5;
-    else if (key == GLUT_KEY_UP)
-        rotate_x += 5;
-    else if (key == GLUT_KEY_DOWN)
-        rotate_x -= 5;
-    else if (key == 27)     //Esc key
-        exit(0);
-    else if (key == 32){    //SpaceBar
-        if (autoRotate) {
-            autoRotate = false;
-        } else {
-            autoRotate = true;
-        }
-    }
-    //  Request display update
-    glutPostRedisplay();
-}
-
-int main(int argc, char* argv[]){
-    //  Initialize GLUT and process user parameters
-    glutInit(&argc,argv);
-    //  Request double buffered true color window with Z-buffer
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    // Create window
-    glutCreateWindow("Testing");
-    //  Enable Z-buffer depth test
-    glEnable(GL_DEPTH_TEST);
-    // Callback functions
-    glutDisplayFunc(display);
-    glutSpecialFunc(specialKeys);
-    //  Pass control to GLUT for events
-    glutMainLoop();
-    
-    //  Return to OS
-    return 0;
-}
-*/

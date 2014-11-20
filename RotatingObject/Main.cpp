@@ -1,6 +1,6 @@
-#include "Sean/Cube/main.cpp"
+//#include "Sean/Cube/main.cpp"
 //#include "Mindy/main.cpp"
-#include "Jacob/Jacob/main.cpp"
+//#include "Jacob/Jacob/main.cpp"
 
 void specialKeys();
 void display();
@@ -8,6 +8,11 @@ void display();
 bool openCube;
 bool openJacob;
 bool openMindy;
+
+double rotate_y=0;
+double rotate_x=0;
+bool autoRotate;
+
 
 void display(){
     //  Clear screen and Z-buffer
@@ -23,11 +28,15 @@ void display(){
     //Which object to open
     std::cout << "1 for Sean\n2 for Jacob\n3 for Mindy\n";
     if (openCube) {
-        cube();
+//        sean();
     } else if (openJacob){
-        jacob();
+//        jacob();
     }else if (openMindy){
+<<<<<<< Updated upstream
        teapot();
+=======
+        mindy();
+>>>>>>> Stashed changes
     }
 
     glFlush();
