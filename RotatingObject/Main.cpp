@@ -1,13 +1,16 @@
-#include "Sean/Cube/main.cpp"
-#include "Mindy/main.cpp"
-#include "Jacob/Jacob/main.cpp"
+#include "Sean/Cube/sean.cpp"
+#include "Mindy/mindy.cpp"
+#include "Jacob/Jacob/jacob.cpp"
 
 void specialKeys();
 void display();
 
 bool openCube;
 bool openJacob;
+bool openJacob2;
 bool openMindy;
+
+bool change;
 
 void display(){
     //  Clear screen and Z-buffer
@@ -21,18 +24,17 @@ void display(){
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
 
     //Which object to open
-    std::cout << "1 for Sean\n2 for Jacob\n3 for Mindy\n";
     if (openCube) {
         cube();
     } else if (openJacob){
         jacob();
     }else if (openMindy){
-       teapot();
+        teapot();
+    }else if (openJacob2){
+        jacobInverse();
     }
-
     glFlush();
     glutSwapBuffers();
-
 }
 
 void specialKeys( int key, int x, int y ) {
@@ -81,7 +83,30 @@ void specialKeys( int key, int x, int y ) {
                 openMindy = false;
             }
             break;
+            
+        case 52:    //Number 4
+            if (!openJacob) {
+                openJacob2 = true;
+                openCube = openMindy = false;
+            }
+            else {
+                openJacob2 = false;
+            }
+            break;
+            
+        case 119:    //w
+            if(!change) {
+                change = true;
+            }
+            else {
+                change = false;
+            }
+            break;
 
+        case 114:    //r
+            rotate_x = 0;
+            rotate_y = 0;
+            break;
         default:
             break;
     }
