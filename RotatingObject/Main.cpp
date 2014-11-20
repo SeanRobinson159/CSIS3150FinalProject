@@ -137,7 +137,7 @@ int main(int argc, char* argv[]){
     //  Request double buffered true color window with Z-buffer
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     // Create window
-    glutCreateWindow("");
+    glutCreateWindow("Rotating Objects – OpenGL");
     //  Enable Z-buffer depth test
     glEnable(GL_DEPTH_TEST);
     // Callback functions
