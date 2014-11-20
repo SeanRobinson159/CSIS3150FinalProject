@@ -20,9 +20,9 @@
 void display();
 void specialKeys();
 
-//double rotate_y=0;
-//double rotate_x=0;
-//bool autoRotate=false;
+double rotate_y=0;
+double rotate_x=0;
+bool autoRotate=false;
 
 void display(){
     
@@ -76,9 +76,9 @@ void display(){
         rotate_y +=1;
         glutPostRedisplay();
     }
-<<<<<<< Updated upstream
-}
-=======
+//<<<<<<< Updated upstream
+//}
+//=======
     glFlush();
     glutSwapBuffers();
     
@@ -151,4 +151,4 @@ int main(int argc, char* argv[]){
     //  Return to OS
     return 0;
 }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
