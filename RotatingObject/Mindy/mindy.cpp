@@ -10,7 +10,6 @@
     #include <GL/glut.h>
 #endif
 
-//#include <GL/glu.h>
 #include <stdlib.h>
 
 
