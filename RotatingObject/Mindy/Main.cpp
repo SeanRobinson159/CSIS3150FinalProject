@@ -26,3 +26,16 @@ glPopMatrix();
         glutPostRedisplay();
     }
 }
+
+void torus(){
+glColor3f(1,0.0,0.0);
+glPushMatrix();
+glutWireTorus(.5);
+glPopMatrix();
+
+    if (autoRotate) {
+        rotate_x +=1;
+        rotate_y +=1;
+        glutPostRedisplay();
+    }
+}
