@@ -12,16 +12,16 @@
 void specialKeys();
 void display();
 void openObject();
-void displayMenu(float x, float y, float r, float g, float b, void *font, char *string);
+void displayMenu(float x, float y, float r, float g, float b, void *font, const char *string);
 
 //Setting up variables
-bool showMenu;
+bool showMenu = true;
 bool openCube;
 bool openJacob;
 bool openJacob2;
 bool openMindy;
 
-void displayMenu(float x, float y, float r, float g, float b, void *font, char *string){
+void displayMenu(float x, float y, float r, float g, float b, void *font, const char *string){
     glColor3f( r, g, b );
     glRasterPos2f(x, y);
     int len, i;
@@ -49,10 +49,15 @@ void display(){
 
 void openObject(){
     if (showMenu) {
-        displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
-        displayMenu(-0.2,-0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
-        displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Teapot");
-        displayMenu(-0.2,-0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
+        displayMenu(-0.2, 0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
+        displayMenu(-0.2, 0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
+        displayMenu(-0.2, 0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Teapot");
+        displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
+        displayMenu(-0.2, 0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "R: Reset Rotate");
+        displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "M: Menu");
+        displayMenu(-0.2,-0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "ESC: Exit");
+        displayMenu(-0.2,-0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "Rotate with arrow keys");
+        displayMenu(-0.2,-0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "(Auto Rotate with Spacebar)");
     } else
         if (openCube) {
         cube();
@@ -139,4 +144,5 @@ int main(int argc, char* argv[]){
     glutSpecialFunc(specialKeys);
     //  Pass control to GLUT for events
     glutMainLoop();
+    return 0;
 }
