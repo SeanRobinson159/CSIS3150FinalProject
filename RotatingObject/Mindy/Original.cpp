@@ -1,12 +1,7 @@
-#include <stdlib.h>
+
 #include <GL/glu.h>
-
-#ifdef __APPLE__	//If it is running on an Apple device
-	#include <GLUT/glut.h>
-#else				//If it is running on anything else
-	#include <GL/glut.h>
-#endif
-
+#include <GL/glut.h>
+#include <stdlib.h>
 
 static int slices = 20;
 static int stacks = 20;
@@ -67,7 +62,7 @@ int main(int argc, char *argv[])
     glutInitWindowPosition(10,10);
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
-    glutCreateWindow("Sphere >.<");
+    glutCreateWindow("Thingy");
 
     glutReshapeFunc(resize);
     glutDisplayFunc(display);
