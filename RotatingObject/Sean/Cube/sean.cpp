@@ -1,10 +1,10 @@
 #include <iostream>
 #define GL_GLEXT_PROTOTYPES
-#ifdef __APPLE__    //If it is an Apple device
-    #include <GLUT/glut.h>
-#else
-    #include <GL/glut.h>
-#endif
+//#ifdef __APPLE__    //If it is an Apple device
+//    #include <GLUT/glut.h>
+//#else
+//    #include <GL/glut.h>
+//#endif
 
 void cube();
 

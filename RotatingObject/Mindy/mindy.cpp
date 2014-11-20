@@ -3,12 +3,12 @@
 #endif // SHAPEHEADER_H_INCLUDED
 
 #include <iostream>
-#define GL_GLEXT_PROTOTYPES
-#ifdef __APPLE__    //If it is an Apple device
-    #include <GLUT/glut.h>
-#else
-    #include <GL/glut.h>
-#endif
+//#define GL_GLEXT_PROTOTYPES
+//#ifdef __APPLE__    //If it is an Apple device
+//    #include <GLUT/glut.h>
+//#else
+//    #include <GL/glut.h>
+//#endif
 
 #include <stdlib.h>
 

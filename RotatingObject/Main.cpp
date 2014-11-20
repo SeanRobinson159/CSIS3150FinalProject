@@ -1,3 +1,9 @@
+#ifdef __APPLE__	//If it is running on an Apple device
+    #include <GLUT/glut.h>
+#else				//If it is running on anything else
+    #include <GL/glut.h>
+#endif
+
 #include "Sean/Cube/sean.cpp"
 #include "Mindy/mindy.cpp"
 #include "Jacob/Jacob/jacob.cpp"
@@ -6,12 +12,24 @@
 void specialKeys();
 void display();
 void openObject();
+void displayMenu(float x, float y, float r, float g, float b, void *font, char *string);
 
 //Setting up variables
+bool showMenu;
 bool openCube;
 bool openJacob;
 bool openJacob2;
 bool openMindy;
+
+void displayMenu(float x, float y, float r, float g, float b, void *font, char *string){
+    glColor3f( r, g, b );
+    glRasterPos2f(x, y);
+    int len, i;
+    len = (int)strlen(string);
+    for (i = 0; i < len; i++) {
+        glutBitmapCharacter(font, string[i]);
+    }
+}
 
 void display(){
     //  Clear screen and Z-buffer
@@ -30,7 +48,13 @@ void display(){
 }
 
 void openObject(){
-    if (openCube) {
+    if (showMenu) {
+        displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
+        displayMenu(-0.2,-0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
+        displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Teapot");
+        displayMenu(-0.2,-0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
+    } else
+        if (openCube) {
         cube();
     } else if (openJacob){
         jacob();
@@ -45,27 +69,33 @@ void keyBinding(int key){
     switch (key) {  //Which object to open
         case 49:    //Number 1
             openCube = !openCube;
-            openJacob = openJacob2 = openMindy = false;
+            showMenu = openJacob = openJacob2 = openMindy = false;
             break;
             
         case 50:    //Number 2
             openJacob = !openJacob;
-            openCube = openJacob2 = openMindy = false;
+            showMenu = openCube = openJacob2 = openMindy = false;
             break;
             
         case 51:    //Number 3
             openMindy = !openMindy;
-            openJacob = openJacob2 = openCube = false;
+            showMenu = openJacob = openJacob2 = openCube = false;
             break;
             
         case 52:    //Number 4
             openJacob2 = !openJacob2;
-            openJacob = openCube = openMindy = false;
+            showMenu = openJacob = openCube = openMindy = false;
             break;
             
         case 114:    //r
             rotate_x = 0;
             rotate_y = 0;
+            break;
+            
+        case 109:    //m
+            rotate_x = 0;
+            rotate_y = 0;
+            showMenu = !showMenu;
             break;
             
         default:

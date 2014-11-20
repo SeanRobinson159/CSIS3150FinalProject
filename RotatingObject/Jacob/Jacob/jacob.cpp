@@ -11,11 +11,11 @@
 #include <math.h>
 #define GL_GLEXT_PROTOTYPES
 
-#ifdef __APPLE__	//If it is running on an Apple device
-#include <GLUT/glut.h>
-#else				//If it is running on anything else
-#include <GL/glut.h>
-#endif
+//#ifdef __APPLE__	//If it is running on an Apple device
+//#include <GLUT/glut.h>
+//#else				//If it is running on anything else
+//#include <GL/glut.h>
+//#endif
 
 void jacob(){
     
