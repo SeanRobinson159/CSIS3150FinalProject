@@ -51,15 +51,17 @@ void display(){
 
 void openObject(){
     if (showMenu) {
-        displayMenu(-0.2, 0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
-        displayMenu(-0.2, 0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
-        displayMenu(-0.2, 0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Torus");
-        displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
-        displayMenu(-0.2, 0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "R: Reset Rotate");
-        displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "M: Menu");
-        displayMenu(-0.2,-0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "ESC: Exit");
-        displayMenu(-0.2,-0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "Rotate with arrow keys");
-        displayMenu(-0.2,-0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "(Auto Rotate with Spacebar)");
+        displayMenu(-0.2, 0.5,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "1: Cube");
+        displayMenu(-0.2, 0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "2: Tetrahedron");
+        displayMenu(-0.2, 0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "3: Teapot");
+        displayMenu(-0.2, 0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "4: Hypertetrahedron");
+        displayMenu(-0.2, 0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "5: Torus");
+        displayMenu(-0.2, 0.0,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "W: Wireframe");
+        displayMenu(-0.2,-0.1,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "R: Reset Rotate");
+        displayMenu(-0.2,-0.2,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "M: Menu");
+        displayMenu(-0.2,-0.3,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "ESC: Exit");
+        displayMenu(-0.2,-0.4,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "Rotate with arrow keys");
+        displayMenu(-0.2,-0.5,1.0,1.0,1.0,GLUT_BITMAP_HELVETICA_18, "(Auto Rotate with Spacebar)");
     } else
         if (openCube) {
         cube();
@@ -67,6 +69,8 @@ void openObject(){
         jacob();
     }else if (openMindy){
         teapot(isSolid);
+    }else if (openMindy2){
+        torus(isSolid);
     }else if (openJacob2){
         jacob2();
     }
@@ -76,19 +80,23 @@ void keyBinding(int key){
     switch (key) {  //Which object to open
         case 49:    //Number 1
             openCube = !openCube;
-            showMenu = openJacob = openJacob2 = openMindy = false;
+            showMenu = openMindy2 = openJacob = openJacob2 = openMindy = false;
             break;
         case 50:    //Number 2
             openJacob = !openJacob;
-            showMenu = openCube = openJacob2 = openMindy = false;
+            showMenu = openMindy2 = openCube = openJacob2 = openMindy = false;
             break;
         case 51:    //Number 3
             openMindy = !openMindy;
-            showMenu = openJacob = openJacob2 = openCube = false;
+            showMenu = openMindy2 = openJacob = openJacob2 = openCube = false;
             break;
         case 52:    //Number 4
             openJacob2 = !openJacob2;
-            showMenu = openJacob = openCube = openMindy = false;
+            showMenu = openMindy2 = openJacob = openCube = openMindy = false;
+            break;
+        case 53:    //Number 5
+            openMindy2 = !openMindy2;
+            showMenu = openJacob = openJacob2 = openCube = openMindy = false;
             break;
         case 114:    //letter r
             rotate_x = 0;
