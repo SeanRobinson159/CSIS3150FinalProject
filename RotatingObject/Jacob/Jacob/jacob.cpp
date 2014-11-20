@@ -69,7 +69,7 @@ void jacob(){
     }
 }
 
-void jacobInverse(){
+void jacob2(){
     
     //  Clear screen and Z-buffer
     glClearColor(0, 0, 0, 1);

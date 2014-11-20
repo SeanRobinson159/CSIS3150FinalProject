@@ -2,28 +2,34 @@
 #include "Mindy/mindy.cpp"
 #include "Jacob/Jacob/jacob.cpp"
 
+//Setting up methods
 void specialKeys();
 void display();
+void openObject();
 
+//Setting up variables
 bool openCube;
 bool openJacob;
 bool openJacob2;
 bool openMindy;
 
-bool change;
-
 void display(){
     //  Clear screen and Z-buffer
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
     // Reset transformations
     glLoadIdentity();
-
     // Rotate when user changes rotate_x and rotate_y
     glRotatef( rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
-
+    
     //Which object to open
+    openObject();
+    
+    glFlush();
+    glutSwapBuffers();
+}
+
+void openObject(){
     if (openCube) {
         cube();
     } else if (openJacob){
@@ -31,10 +37,41 @@ void display(){
     }else if (openMindy){
         teapot();
     }else if (openJacob2){
-        jacobInverse();
+        jacob2();
     }
-    glFlush();
-    glutSwapBuffers();
+}
+
+void keyBinding(int key){
+    switch (key) {  //Which object to open
+        case 49:    //Number 1
+            openCube = !openCube;
+            openJacob = openJacob2 = openMindy = false;
+            break;
+            
+        case 50:    //Number 2
+            openJacob = !openJacob;
+            openCube = openJacob2 = openMindy = false;
+            break;
+            
+        case 51:    //Number 3
+            openMindy = !openMindy;
+            openJacob = openJacob2 = openCube = false;
+            break;
+            
+        case 52:    //Number 4
+            openJacob2 = !openJacob2;
+            openJacob = openCube = openMindy = false;
+            break;
+            
+        case 114:    //r
+            rotate_x = 0;
+            rotate_y = 0;
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 void specialKeys( int key, int x, int y ) {
@@ -52,64 +89,7 @@ void specialKeys( int key, int x, int y ) {
         if (autoRotate) autoRotate = false;
         else autoRotate = true;
     }
-
-    switch (key) {  //Which object to open
-        case 49:    //Number 1
-            if (!openCube){
-                openCube = true;
-                openMindy = openJacob = false;
-            }
-            else {
-                openCube = false;
-            }
-            break;
-
-        case 50:    //Number 2
-            if (!openJacob) {
-                openJacob = true;
-                openCube = openMindy = false;
-            }
-            else {
-                openJacob = false;
-            }
-            break;
-
-        case 51:    //Number 3
-            if(!openMindy) {
-                openMindy = true;
-                openJacob = openCube = false;
-            }
-            else {
-                openMindy = false;
-            }
-            break;
-            
-        case 52:    //Number 4
-            if (!openJacob) {
-                openJacob2 = true;
-                openCube = openMindy = false;
-            }
-            else {
-                openJacob2 = false;
-            }
-            break;
-            
-        case 119:    //w
-            if(!change) {
-                change = true;
-            }
-            else {
-                change = false;
-            }
-            break;
-
-        case 114:    //r
-            rotate_x = 0;
-            rotate_y = 0;
-            break;
-        default:
-            break;
-    }
+    keyBinding(key);
     //  Request display update
     glutPostRedisplay();
 }
@@ -121,7 +101,7 @@ int main(int argc, char* argv[]){
     //  Request double buffered true color window with Z-buffer
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     // Create window
-    glutCreateWindow("Rotating Objects");
+    glutCreateWindow("***Awesome Objects!***");
     //  Enable Z-buffer depth test
     glEnable(GL_DEPTH_TEST);
     // Callback functions
