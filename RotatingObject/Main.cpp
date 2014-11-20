@@ -12,14 +12,14 @@ bool openMindy;
 void display(){
     //  Clear screen and Z-buffer
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    
+
     // Reset transformations
     glLoadIdentity();
-    
+
     // Rotate when user changes rotate_x and rotate_y
     glRotatef( rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
-    
+
     //Which object to open
     std::cout << "1 for Sean\n2 for Jacob\n3 for Mindy\n";
     if (openCube) {
@@ -27,12 +27,12 @@ void display(){
     } else if (openJacob){
         jacob();
     }else if (openMindy){
-//        mindy();
+       teapot();
     }
-    
+
     glFlush();
     glutSwapBuffers();
-    
+
 }
 
 void specialKeys( int key, int x, int y ) {
@@ -61,7 +61,7 @@ void specialKeys( int key, int x, int y ) {
                 openCube = false;
             }
             break;
-            
+
         case 50:    //Number 2
             if (!openJacob) {
                 openJacob = true;
@@ -71,7 +71,7 @@ void specialKeys( int key, int x, int y ) {
                 openJacob = false;
             }
             break;
-        
+
         case 51:    //Number 3
             if(!openMindy) {
                 openMindy = true;
@@ -81,7 +81,7 @@ void specialKeys( int key, int x, int y ) {
                 openMindy = false;
             }
             break;
-            
+
         default:
             break;
     }
