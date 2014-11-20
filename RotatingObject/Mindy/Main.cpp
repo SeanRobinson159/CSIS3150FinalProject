@@ -21,6 +21,13 @@ glPushMatrix();
 glutWireTeapot(.5);
 glPopMatrix();
 
+ if(!change){
+        glColor3f(1,1.0,0.0);
+        glPushMatrix();
+        glutSolidTeapot(.5);
+        glPopMatrix();
+    }
+
     if (autoRotate) {
         rotate_x +=1;
         rotate_y +=1;
@@ -45,14 +52,14 @@ void torus(bool change){
 
     glColor3f(1,1.0,0.0);
     glPushMatrix();
-    glutSolidTorus(.5, 1.0, 10, 40);
+    glutSolidTorus(.5, 1.0, 5, 20);
     glPopMatrix();
 
 
     if(!change){
         glColor3f(1,1.0,0.0);
         glPushMatrix();
-        glutWireTorus(.5, 1.0, 10, 40);
+        glutWireTorus(.5, 1.0, 5, 20);
         glPopMatrix();
     }
 
