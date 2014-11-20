@@ -12,7 +12,7 @@ double rotate_y=0;
 double rotate_x=0;
 bool autoRotate;
 
-void sean() {
+void cube() {
     //Red - FRONT
     glBegin(GL_POLYGON);
     glColor3f(   .72,  .07,  .20 );

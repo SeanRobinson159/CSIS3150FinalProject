@@ -24,7 +24,7 @@ double rotate_y=0;
 double rotate_x=0;
 bool autoRotate=false;
 
-void display(){
+void jacob(){
     
     //glEnable(GL_LIGHTING);
     
@@ -40,7 +40,7 @@ void display(){
     glRotatef( rotate_y, 0.0, 1.0, 0.0 );
     
     glBegin(GL_POLYGON);
-//    glNormal3b(1, 1, 1);
+    glNormal3b(1, 1, 1);
     glColor3f(0.86, 0.32, 0.15);
     glVertex3f(.75, 0, (-.75/sqrt(2.0)));
     glVertex3f(-.75, 0, (-.75/sqrt(2.0)));
@@ -48,7 +48,7 @@ void display(){
     glEnd();
     
     glBegin(GL_POLYGON);
-//    glNormal3b(1, 1, 1);
+    glNormal3b(1, 1, 1);
     glColor3f(0.95, 0.42, 0.14);
     glVertex3f(-.75, 0, (-.75/sqrt(2.0)));
     glVertex3f(0, .75, (.75/sqrt(2.0)));
@@ -56,7 +56,7 @@ void display(){
     glEnd();
     
     glBegin(GL_POLYGON);
-//    glNormal3b(1, 1, 1);
+    glNormal3b(1, 1, 1);
     glColor3f(0.58, 0.58, 0.6);
     glVertex3f(0, .75, (.75/sqrt(2.0)));
     glVertex3f(0, -.75, (.75/sqrt(2.0)));
@@ -64,7 +64,7 @@ void display(){
     glEnd();
     
     glBegin(GL_POLYGON);
-//    glNormal3b(1, 1, 1);
+    glNormal3b(1, 1, 1);
     glColor3f(0.88, 0.85, 0.82);
     glVertex3f(0, -.75, (.75/sqrt(2.0)));
     glVertex3f(.75, 0, (-.75/sqrt(2.0)));
@@ -76,15 +76,12 @@ void display(){
         rotate_y +=1;
         glutPostRedisplay();
     }
-//<<<<<<< Updated upstream
-//}
-//=======
     glFlush();
     glutSwapBuffers();
     
 }
 
-
+/*
 // ----------------------------------------------------------
 // specialKeys() Callback Function
 // ----------------------------------------------------------
@@ -120,29 +117,6 @@ int main(int argc, char* argv[]){
     //  Enable Z-buffer depth test
     glEnable(GL_DEPTH_TEST);
     // Callback functions
-    
-//    glClearColor(1,20,1,20);
-//    glEnable(GL_CULL_FACE);
-//    glCullFace(GL_BACK);
-    
-    glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LESS);
-    
-//    glEnable(GL_LIGHT0);
-//    glEnable(GL_NORMALIZE);
-//    glEnable(GL_COLOR_MATERIAL);
-//    glEnable(GL_LIGHTING);
-    
-//    glLightfv(GL_LIGHT0, GL_AMBIENT,  light_ambient);
-//    glLightfv(GL_LIGHT0, GL_DIFFUSE,  light_diffuse);
-//    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
-//    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-//    
-//    glMaterialfv(GL_FRONT, GL_AMBIENT,   mat_ambient);
-//    glMaterialfv(GL_FRONT, GL_DIFFUSE,   mat_diffuse);
-//    glMaterialfv(GL_FRONT, GL_SPECULAR,  mat_specular);
-//    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
-    
     glutDisplayFunc(display);
     glutSpecialFunc(specialKeys);
     //  Pass control to GLUT for events
@@ -151,4 +125,4 @@ int main(int argc, char* argv[]){
     //  Return to OS
     return 0;
 }
-//>>>>>>> Stashed changes
+*/
