@@ -28,11 +28,20 @@ glPopMatrix();
     }
 }
 
-void torus(){
-    glColor3f(1,0.0,0.0);
+void torus(bool change){
+
+    glColor3f(1,1.0,0.0);
     glPushMatrix();
     glutSolidTorus(.5, 1.0, 10, 40);
     glPopMatrix();
+
+
+    if(!change){
+        glColor3f(1,1.0,0.0);
+        glPushMatrix();
+        glutWireTorus(.5, 1.0, 10, 40);
+        glPopMatrix();
+    }
 
     if (autoRotate) {
         rotate_x +=1;
@@ -40,3 +49,5 @@ void torus(){
         glutPostRedisplay();
     }
 }
+
+
