@@ -10,7 +10,6 @@
     #include <GL/glut.h>
 #endif
 
-//#include <GL/glu.h>
 #include <stdlib.h>
 
 
@@ -20,6 +19,7 @@ glColor3f(1,0.0,0.0);
 glPushMatrix();
 glutWireTeapot(.5);
 glPopMatrix();
+
 
  if(!change){
         glColor3f(1,1.0,0.0);
