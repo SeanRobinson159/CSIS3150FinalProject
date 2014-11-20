@@ -10,6 +10,7 @@
     #include <GL/glut.h>
 #endif
 
+#include <GL/glu.h>
 #include <stdlib.h>
 
 
@@ -30,7 +31,7 @@ glPopMatrix();
 void torus(){
 glColor3f(1,0.0,0.0);
 glPushMatrix();
-glutWireTorus(.5);
+glutWireTorus(.5, .5, 10, 50);
 glPopMatrix();
 
     if (autoRotate) {
